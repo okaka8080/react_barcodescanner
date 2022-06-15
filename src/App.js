@@ -13,10 +13,6 @@ function App() {
   const onDetected = result => {
     setResult(result);
   };
-  const offCamera = () => {
-    setCamera(false);
-  };
-
 
   return (
     <div className="App">
@@ -25,7 +21,7 @@ function App() {
         {camera ? "Stop" : "Start"}
       </button>
       <div className="container">
-        {camera && <Scanner onDetected={onDetected} offCamera={offCamera}/>}
+        {camera && <Scanner onDetected={onDetected}/>}
 
       </div>
     </div>

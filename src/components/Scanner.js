@@ -4,7 +4,6 @@ import Quagga from "quagga";
 
 const Scanner = (props, event) => {
   const { onDetected } = props;
-  const { offCamera } = event;
 
   useEffect(() => {
     Quagga.init(config, err => {
@@ -66,7 +65,6 @@ const Scanner = (props, event) => {
 
   const detected = result => {
     onDetected(result.codeResult.code);
-    offCamera();
     Quagga.stop();
   };
 
