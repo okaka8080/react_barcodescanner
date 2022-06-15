@@ -66,8 +66,8 @@ const Scanner = props => {
 
   const detected = result => {
     onDetected(result.codeResult.code);
-    offCamer(false);
     Quagga.stop();
+    offCamer(false);
 
   };
 
