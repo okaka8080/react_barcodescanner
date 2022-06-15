@@ -17,6 +17,7 @@ const Scanner = props => {
     });
 
     //detecting boxes on stream
+
     Quagga.onProcessed(result => {
       var drawingCtx = Quagga.canvas.ctx.overlay,
         drawingCanvas = Quagga.canvas.dom.overlay;
