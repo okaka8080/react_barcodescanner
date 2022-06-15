@@ -8,8 +8,8 @@ function App() {
   const [camera, setCamera] = useState(false);
   const [result, setResult] = useState(null);
 
-  const OffCamera = camera => {
-    setCamera(false);
+  const offCamera = camera => {
+    setCamera(camera);
   };
 
   const onDetected = result => {
@@ -23,7 +23,7 @@ function App() {
         {camera ? "Stop" : "Start"}
       </button>
       <div className="container">
-        {camera && <Scanner onDetected={onDetected} />}
+        {camera && <Scanner onDetected={onDetected} offCamera={camera}/>}
       </div>
     </div>
   );
