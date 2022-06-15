@@ -65,7 +65,6 @@ const Scanner = (props, event) => {
 
   const detected = result => {
     onDetected(result.codeResult.code);
-    Quagga.stop();
   };
 
   return (
