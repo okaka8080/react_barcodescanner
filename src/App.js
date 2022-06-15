@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>{result ? result : "Scanning..."}</p>
+      <p>{result ? result : "認識中..."}</p>
       <button onClick={() => setCamera(!camera)}>
         {camera ? "Stop" : "Start"}
       </button>
