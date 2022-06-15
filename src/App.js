@@ -4,30 +4,34 @@ import React, { useState } from "react";
 import Scanner from "./components/Scanner";
 import ReactDOM from "react-dom";
 
+export const CameraState = React.createContext();
+
 function App() {
   const [camera, setCamera] = useState(false);
   const [result, setResult] = useState(null);
 
-  const offCamera = camera => {
-    setCamera(camera);
-  };
-
   const onDetected = result => {
     setResult(result);
   };
+  const offCamera = () => {
+    setCamera(false);
+  };
+
 
   return (
     <div className="App">
-      <p>{result ? result : "認識中..."}</p>
+      <p>{result ? result : "バーコードを写してください。"}</p>
       <button onClick={() => setCamera(!camera)}>
         {camera ? "Stop" : "Start"}
       </button>
       <div className="container">
-        {camera && <Scanner onDetected={onDetected} offCamera={camera}/>}
+        {camera && <Scanner onDetected={onDetected} offCamera={offCamera}/>}
+
       </div>
     </div>
   );
 }
+
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
