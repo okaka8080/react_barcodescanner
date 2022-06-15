@@ -8,6 +8,10 @@ function App() {
   const [camera, setCamera] = useState(false);
   const [result, setResult] = useState(null);
 
+  const OffCamera = camera => {
+    setCamera(false);
+  };
+
   const onDetected = result => {
     setResult(result);
   };
